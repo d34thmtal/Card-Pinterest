@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 100px;
+
+}
+
+.card-container{
+    position: relative;
+    width: 350px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black;
+
+
+}
+
+.card-container_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+
+}
+
+.card-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+
+}
+
+.card-container:hover{
+    box-shadow: 5px 5px 10px black;
+
+}
+
+.card-container:hover::before{
+    opacity: 0.3;
+}
+
+.card-container_save{
+    z-index: 3;
+    position: absolute;
+    background-color: red;
+    padding: 15px;
+    border-radius: 30px;
+    right: 15px;
+    top: 15px;
+    font-weight: bold;
+    color: white;
+    transform: translateY(-100px);
+    transition: transform .3s, opacity .3s;
+    transition-timing-function:  ease-in;
+    
+
+}
+
+.card-container_icons_bottom{
+    z-index: 3;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+  
+
+
+}
+.card-container_icons_bottom div{
+    display: inline-block;
+    background-color: white;
+    padding: 10px 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    opacity: 0.8;
+    margin-right: 10px;
+    transform: translateY(100px);
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function:  ease-in;
+
+}
+
+.card-container:hover .card-container_icons_bottom div{
+    opacity: 0.8;
+    transform: translateY(0);
+
+}
+
+.card-container:hover .card-container_save{
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.card-container_save:hover{
+    background-color: aqua;
+}
